@@ -59,8 +59,13 @@ services:
       - backend
 
   sqitch:
-    user: "${UID}:${GID}"
-    image: sqitch/sqitch:v1.6.1
+    environment:
+      PGHOST: postgres
+      PGPORT: 5432
+      PGDATABASE: orders
+      PGUSER: orders
+      PGPASSWORD: ${POSTGRES_PASSWORD}
+    image: local/sqitch:v1.6.1
     working_dir: /repo/db
     volumes:
       - .:/repo
