@@ -1,5 +1,6 @@
 services:
   app:
+    user: "${UID}:${GID}"
     build:
       context: .
       dockerfile: Dockerfile
@@ -54,6 +55,15 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
       - postgres_data:/var/lib/postgresql
+    networks:
+      - backend
+
+  sqitch:
+    user: "${UID}:${GID}"
+    image: sqitch/sqitch:v1.6.1
+    working_dir: /repo/db
+    volumes:
+      - .:/repo
     networks:
       - backend
 
