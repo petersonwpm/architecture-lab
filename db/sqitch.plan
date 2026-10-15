@@ -1,3 +1,4 @@
 %syntax-version=1.0.0
 %project=event-driven-architecture-lab
 
+create-orders-schema 2026-10-15T19:59:17Z sqitch <sqitch@d567169ed2ae> # Create initial order schema
