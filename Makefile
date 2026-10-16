@@ -25,6 +25,9 @@ revert:
 destroy:
 	$(MAKE) sqitch ARGS='destroy'
 
+verify:
+	$(MAKE) sqitch ARGS='verify'
+
 psql:
 	docker compose exec postgres psql -U orders -d orders
 
