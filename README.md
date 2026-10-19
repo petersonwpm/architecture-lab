@@ -1,6 +1,6 @@
 # Event-driven architecture lab
 
-Ambiente local para experimentar com arquitetura orientada a eventos. O runtime HTTP usa PHP 8.4, Symfony 7.4, Apache e Composer em containers. PostgreSQL 18, Sqitch e Apache Kafka 4.1.0 são serviços independentes.
+Ambiente local para experimentar com arquitetura orientada a eventos. O runtime HTTP usa PHP 8.4, Symfony 7.4, Apache e Composer em containers. O projeto Symfony fica isolado em `symfony/`; código independente do framework fica na raiz `src/`. PostgreSQL 18, Sqitch e Apache Kafka 4.1.0 são serviços independentes.
 
 ## Requisitos
 
@@ -8,7 +8,7 @@ Ambiente local para experimentar com arquitetura orientada a eventos. O runtime 
 - Rede externa `reverse-proxy` com Traefik conectado
 - Entrada local para `eda.local` apontando para o Traefik
 
-PHP, Composer e dependências da aplicação são executados nos containers; não é necessário instalá-los no host.
+PHP, Composer e dependências da aplicação são executados nos containers; não é necessário instalá-los no host. O autoload do Composer mapeia `App\\` para `../src/` e `Eda\\Symfony\\` para `symfony/src/`.
 
 ## Iniciar
 
@@ -29,7 +29,7 @@ make composer ARGS='about'
 
 ## Banco e migrations
 
-O volume `postgres_data` e o plano Sqitch existente são preservados. `make deploy` aplica apenas changes pendentes; `make sqitch ARGS='verify'` verifica o estado versionado.
+O volume `postgres_data` e o plano Sqitch existente são preservados. `make deploy` aplica apenas changes pendentes; `make sqitch ARGS='verify'` verifica o estado versionado. Os volumes `app_vendor` e `app_var` mantêm seus nomes e armazenam dependências e cache no caminho `symfony/`.
 
 ```sh
 make deploy

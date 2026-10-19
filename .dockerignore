@@ -1,7 +1,12 @@
 .git
 .env
+.env.*
+!.env.example
+!symfony/.env
 vendor
 var
+symfony/vendor
+symfony/var
 node_modules
 dist
 *.tsbuildinfo

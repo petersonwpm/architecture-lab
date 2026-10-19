@@ -3,15 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    working_dir: /app
+    working_dir: /app/symfony
+    command: sh -c 'composer install --no-interaction --prefer-dist --no-progress && exec apache2-foreground'
     volumes:
       - .:/app
-      - app_vendor:/app/vendor
-      - app_var:/app/var
+      - app_vendor:/app/symfony/vendor
+      - app_var:/app/symfony/var
     environment:
       APP_ENV: dev
       APP_DEBUG: 1
       APP_SECRET: ${APP_SECRET:-dev_only_change_me}
+      DEFAULT_URI: http://eda.local
       DATABASE_URL: postgresql://orders:${POSTGRES_PASSWORD}@postgres:5432/orders?serverVersion=18&charset=utf8
       KAFKA_BROKERS: kafka:9092
     networks:

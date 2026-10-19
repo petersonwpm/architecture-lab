@@ -8,6 +8,7 @@
 .env
 .env.*
 !.env.example
+!/symfony/.env
 
 # Logs
 logs/
@@ -19,11 +20,11 @@ logs/
 .DS_Store
 
 ###> symfony/framework-bundle ###
-/.env.local
-/.env.local.php
-/.env.*.local
-/config/secrets/prod/prod.decrypt.private.php
-/public/bundles/
-/var/
-/vendor/
+/symfony/.env.local
+/symfony/.env.local.php
+/symfony/.env.*.local
+/symfony/config/secrets/prod/prod.decrypt.private.php
+/symfony/public/bundles/
+/symfony/var/
+/symfony/vendor/
 ###< symfony/framework-bundle ###

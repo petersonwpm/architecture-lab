@@ -9,12 +9,13 @@ RUN apt-get update \
 
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
-ENV APACHE_DOCUMENT_ROOT=/app/public
+ENV APACHE_DOCUMENT_ROOT=/app/symfony/public
 RUN sed -ri 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf \
     && sed -ri 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
 
 WORKDIR /app
 COPY . .
+WORKDIR /app/symfony
 RUN composer install --no-interaction --prefer-dist --no-progress
 RUN mkdir -p var && chown -R www-data:www-data var
 
