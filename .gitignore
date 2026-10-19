@@ -1,8 +1,7 @@
 # Dependencies
-node_modules/
-
-# Build output
-dist/
+/vendor/
+/node_modules/
+/dist/
 *.tsbuildinfo
 
 # Environment variables and secrets
@@ -10,16 +9,21 @@ dist/
 .env.*
 !.env.example
 
-# Test coverage
-coverage/
-
 # Logs
 logs/
 *.log
-npm-debug.log*
 
 # Editor and OS files
 .idea/
 .vscode/
 .DS_Store
 
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###

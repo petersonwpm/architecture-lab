@@ -1,5 +1,7 @@
-node_modules
-dist
 .git
 .env
-coverage
+vendor
+var
+node_modules
+dist
+*.tsbuildinfo
