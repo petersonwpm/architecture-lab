@@ -1,0 +1,40 @@
+{
+    "name": "eda-lab/symfony-runtime",
+    "type": "project",
+    "require": {
+        "php": ">=8.2",
+        "ext-ctype": "*",
+        "ext-iconv": "*",
+        "ext-pdo_pgsql": "*",
+        "symfony/console": "^7.4",
+        "symfony/dotenv": "^7.4",
+        "symfony/flex": "^2.6",
+        "symfony/framework-bundle": "^7.4",
+        "symfony/runtime": "^7.4",
+        "symfony/yaml": "^7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "extra": {
+        "symfony": {
+            "allow-contrib": false,
+            "require": "7.4.*"
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "symfony/flex": true,
+            "symfony/runtime": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "auto-scripts": {
+            "cache:clear": "symfony-cmd",
+            "assets:install %PUBLIC_DIR%": "symfony-cmd"
+        }
+    }
+}
