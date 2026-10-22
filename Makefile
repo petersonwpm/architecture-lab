@@ -1,6 +1,6 @@
 COMPOSE = docker compose
 
-.PHONY: up down sqitch deploy revert destroy verify psql composer
+.PHONY: up down sqitch deploy revert destroy verify psql composer psy
 
 up:
 	$(COMPOSE) up -d --build
@@ -28,3 +28,6 @@ psql:
 
 composer:
 	$(COMPOSE) run --rm --no-deps app composer $(ARGS)
+
+psy:
+	$(COMPOSE) exec app vendor/bin/psysh
