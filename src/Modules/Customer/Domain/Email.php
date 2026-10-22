@@ -1,5 +1,5 @@
 <?php
-namespace App\Modules\Customer\Domain;
+namespace Core\Modules\Customer\Domain;
 
 use DomainException;
 

@@ -1,7 +1,7 @@
 <?php
-namespace App\Modules\Order\Application;
+namespace Core\Modules\Order\Application;
 
-use App\Modules\Order\Domain\OrderId;
+use Core\Modules\Order\Domain\OrderId;
 
 final class CreateOrder
 {

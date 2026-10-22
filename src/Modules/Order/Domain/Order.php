@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Order\Domain;
+namespace Core\Modules\Order\Domain;
 
 class Order
 {

@@ -1,8 +1,8 @@
 <?php
-namespace App\Modules\Order\Domain;
+namespace Core\Modules\Order\Domain;
 
-use App\Modules\Customer\Domain\CustomerId;
-use App\Modules\Customer\Domain\Email;
+use Core\Modules\Customer\Domain\CustomerId;
+use Core\Modules\Customer\Domain\Email;
 
 class CustomerSnapshot
 {

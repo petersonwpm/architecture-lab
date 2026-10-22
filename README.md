@@ -8,7 +8,7 @@ Ambiente local para experimentar com arquitetura orientada a eventos. O runtime 
 - Rede externa `reverse-proxy` com Traefik conectado
 - Entrada local para `eda.local` apontando para o Traefik
 
-PHP, Composer e dependências da aplicação são executados nos containers; não é necessário instalá-los no host. O autoload do Composer mapeia `App\\` para `../src/` e `Eda\\Symfony\\` para `symfony/src/`.
+PHP, Composer e dependências da aplicação são executados nos containers; não é necessário instalá-los no host. O autoload do Composer mapeia `Core\\` para `../src/` e `Eda\\Symfony\\` para `symfony/src/`.
 
 ## Iniciar
 

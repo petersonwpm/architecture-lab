@@ -1,5 +1,5 @@
 <?php
-namespace App\Modules\Order\Domain;
+namespace Core\Modules\Order\Domain;
 
 use InvalidArgumentException;
 

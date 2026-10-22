@@ -8,5 +8,5 @@ services:
         autowire: true
         autoconfigure: true
 
-    App\:
+    Core\:
         resource: '../../src/'

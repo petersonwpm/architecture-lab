@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Order\Application;
+namespace Core\Modules\Order\Application;
 
 final class CreateOrderInput
 {
