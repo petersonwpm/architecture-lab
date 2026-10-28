@@ -1,0 +1,29 @@
+
+@startuml
+left to right direction
+
+actor Cliente
+actor Atendente
+actor Estoque
+actor Financeiro
+actor Logistica as "Logística"
+
+rectangle "Processamento de Pedidos" {
+  usecase "Registrar pedido" as UC1
+  usecase "Consultar disponibilidade" as UC2
+  usecase "Definir preferência de envio" as UC3
+  usecase "Processar pagamento" as UC4
+  usecase "Solicitar novo pagamento" as UC5
+  usecase "Cancelar pedido" as UC6
+  usecase "Agendar entrega" as UC7
+}
+
+Atendente -- UC1
+Estoque -- UC2
+Cliente -- UC3
+Financeiro -- UC4
+Cliente -- UC5
+Atendente -- UC6
+Logistica -- UC7
+@enduml
+
