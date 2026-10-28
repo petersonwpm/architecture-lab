@@ -1,0 +1,27 @@
+{
+    "name": "williams/event-driven-architecture-lab",
+    "description": "Lab to test EDA ideas",
+    "type": "library",
+    "require-dev": {
+        "phpunit/phpunit": "^13.4",
+        "phpstan/phpstan": "^2.3",
+        "squizlabs/php_codesniffer": "^4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Core\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Core\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Williams",
+            "email": "2123360+petersonwpm@users.noreply.github.com"
+        }
+    ],
+    "require": {}
+}
