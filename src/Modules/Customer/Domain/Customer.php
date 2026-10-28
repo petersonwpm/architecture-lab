@@ -5,12 +5,12 @@ namespace Core\Modules\Customer\Domain;
 class Customer
 {
     private CustomerId $id;
-    private string $name;
+    private Name $name;
     private Email $email;
 
     public function __construct(
         CustomerId $id,
-        string $name,
+        Name $name,
         Email $email
     ) {
         $this->id = $id;
@@ -23,7 +23,7 @@ class Customer
         return $this->id;
     }
 
-    public function getName(): string
+    public function getName(): Name
     {
         return $this->name;
     }

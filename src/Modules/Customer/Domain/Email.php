@@ -1,25 +1,25 @@
 <?php
+
 namespace Core\Modules\Customer\Domain;
 
-use DomainException;
+use InvalidArgumentException;
 
 class Email
 {
     private string $email;
 
-    public function __construct(string $value)
+    public function __construct(string $email)
     {
-        if (!$this->isValid($value)) {
-            throw new DomainException("The email is not valid");
+        if (!$this->isValid($email)) {
+            throw new InvalidArgumentException(sprintf('"%s" is not a valid email address', $email));
         }
 
-        $this->email = $value;
-
+        $this->email = $email;
     }
 
-    private function isValid(string $value)
+    private function isValid(string $email): bool
     {
-        return str_contains('@', $value);
+        return filter_var($email, FILTER_VALIDATE_EMAIL) !== false;
     }
 
     public function getEmail(): string
