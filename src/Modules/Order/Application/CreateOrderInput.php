@@ -2,15 +2,17 @@
 
 namespace Core\Modules\Order\Application;
 
+use Core\Modules\Customer\Domain\CustomerId;
+
 final class CreateOrderInput
 {
     public function __construct(
-        private readonly string $customerId,
+        private readonly CustomerId $customerId,
         private readonly OrderItemsInput $products
     ) {
     }
 
-    public function getCustomerId(): string
+    public function getCustomerId(): CustomerId
     {
         return $this->customerId;
     }
